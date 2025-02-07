@@ -1,0 +1,34 @@
+#Create a class Employee
+class Employee:
+    #Create a data member to count number of emps
+    numEmployees = 0
+    totalSalary = 0
+
+    #Create a constructor to initialize variables
+    def __init__(self, name, family, salary, department):
+        self.name = name
+        self.family = family
+        self.salary = salary
+        self.department = department
+        Employee.numEmployees += 1
+        Employee.totalSalary += salary
+
+    #Create a function to average salary
+    def avgSalary():
+        return Employee.totalSalary / Employee.numEmployees
+    
+#Create a fulltime employee class
+class FulltimeEmployee(Employee):
+    #inherit the employee class and call its functions
+    def __init__(self, name, family, salary, department):
+        super().__init__(name, family, salary, department)
+
+#Create instances
+emp1 = Employee("Aidan Bolinger", "Bolinger family", 50000, "cyber")
+emp2 = Employee("Jane Doe", "Doe family", 60000, "HR")
+fulltimeEmp1 = FulltimeEmployee("John Doe", "Doe family", 70000, "IT")
+
+#display results
+print("Employee 1:", emp1.name, ",", emp1.family, ", $", emp1.salary, ",", emp1.department)
+print("Number of employees: ", Employee.numEmployees)
+print("Average salary: ", Employee.avgSalary())

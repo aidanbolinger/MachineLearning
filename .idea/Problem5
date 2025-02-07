@@ -1,0 +1,14 @@
+#Create a function that takes a list and returns
+# a new list with unique items from first list
+
+#Initialize
+sample_list = [1, 2, 3, 3, 3, 3, 4, 5]
+
+#Create a function that converts the list to a set
+# and then back to a list to filter out duplicates
+def unique(sample_list):
+    unique_list = list(set(sample_list))
+    return unique_list
+
+#display results
+print("Unique list: ", unique(sample_list))
