@@ -1,0 +1,80 @@
+#Aidan Bolinger
+#700733392
+
+import numpy as np
+
+#NUMBER 1
+#Create random vector of size 15 with integers in the rang 1-20
+print("\n\nNumber 1:\n")
+randomVector = np.random.randint(1,21,size=15)
+print("Original array:\n", randomVector)
+print()
+
+#Reshape array to 3 by 5
+reshapedArray = randomVector.reshape(3,5)
+print("Reshaped Array:\n", reshapedArray)
+
+print("Array shape:", reshapedArray.shape)
+#Replace the max in each row by 0
+for row in reshapedArray:
+    row[row.argmax()] = 0
+
+print()
+#Display results
+print("New modified array:\n", reshapedArray)
+
+#NUMBER 2
+#Create a 2-dimensional array of size 4x3 with 4-byte integer elements
+print("\n\nNumber 2:\n")
+newArray = np.zeros((4,3), dtype=np.int32)
+
+#Print shape, type, and data type
+print("Array shape:", newArray.shape)
+print("Array type:", type(newArray))
+print("Array data type:", newArray.dtype)
+
+#NUMBER 3
+#Write a program to compute the eigenvalues and
+#right eigenvectors of a given square array given below:
+#[[ 3 -2]
+#[ 1 0]]
+
+print("\n\nNumber 3:\n")
+newArray = np.array([[3,-2], [1,0]])
+
+#Compute eigenvalues and right eigenvectors
+eigenvalues, eigenvectors = np.linalg.eig(newArray)
+
+#Display results
+print("Eigenvalues:", eigenvalues)
+print("Right eigenvectors:\n", eigenvectors)
+
+
+#NUMBER 4
+#Compute the sum of the diagonal element of a given array.
+#[[0 1 2]
+#[3 4 5]]
+
+print("\n\nNumber 4:\n")
+newArray = np.array([[0,1,2], [3,4,5]])
+
+#Compute the sum of diagonals
+diagonalSum = np.trace(newArray)
+
+#Display results
+print("Sum of the diagonal elemets in the given array:", diagonalSum)
+
+
+#NUMBER 5
+#Define array
+print("\n\nNumber 5:\n")
+newArray = np.array([[1,2,3,4,5,6]])
+print("Original array:\n", newArray)
+
+#Reshape 3x2
+reshapedArray1 = newArray.reshape(3,2)
+print("Reshape 3x2:\n", reshapedArray1)
+
+#Reshape 2x3
+reshapedArray2 = newArray.reshape(2,3)
+print("Reshape 2x3:\n", reshapedArray2)
